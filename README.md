@@ -38,6 +38,7 @@ Each of the `*-docker` commands runs a full build in the given style:
  * `app-docker` for testing OMERO.web applications
  * `cli-docker` for testing `omero-cli-*` projects
  * `lib-docker` for testing client-side libraries
+ * `scripts-docker` for testing OMERO.scripts in the ```DIR_SCRIPTS``` location
 
 These scripts are invoked directly by the `script` step in project .travis.yml
 files.
