@@ -1,4 +1,9 @@
 #!/bin/bash
 source /infra/utils
+rm -rf /src
+
+mkdir /src
+git clone -b develop https://github.com/ome/openmicroscopy.git  /src
+
 cd /src
 components/tools/travis-build integration
