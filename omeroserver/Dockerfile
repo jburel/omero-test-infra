@@ -3,7 +3,7 @@ FROM $OMEROSERVER_BASE_IMAGE
 
 USER root
 RUN dnf clean all && rm -rf /var/cache/dnf/*pgdg*/
-RUN dnf --exclude=psql\* update --nogpgcheck
+RUN dnf --exclude=pgdg\* update --nogpgcheck
 RUN yum install -y -q \
     git && \
     dnf clean all
