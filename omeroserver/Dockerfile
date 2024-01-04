@@ -2,8 +2,7 @@ ARG OMEROSERVER_BASE_IMAGE=openmicroscopy/omero-server:latest
 FROM $OMEROSERVER_BASE_IMAGE
 
 USER root
-RUN dnf clean all && rm -rf /var/cache/dnf/*postgresql*/
-RUN dnf --exclude=postgresql\* update --nogpgcheck
+RUN dnf clean all && rm -r /var/cache/dnf  && dnf upgrade -y && dnf update -y 
 RUN yum install -y -q \
     git && \
     dnf clean all
