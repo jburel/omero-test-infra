@@ -3,6 +3,7 @@ FROM $OMEROWEB_BASE_IMAGE
 
 USER root
 RUN dnf clean all && dnf update
+RUN yum clean metadata && yum clean all
 RUN dnf install -y -q \
     java-11-openjdk \
     git && \
