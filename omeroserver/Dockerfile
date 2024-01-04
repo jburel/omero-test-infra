@@ -2,6 +2,7 @@ ARG OMEROSERVER_BASE_IMAGE=openmicroscopy/omero-server:latest
 FROM $OMEROSERVER_BASE_IMAGE
 
 USER root
+RUN ls /etc/yum.repos.d
 RUN dnf clean all && rm -r /var/cache/dnf  && dnf upgrade -y && dnf update -y --nogpgcheck
 RUN yum install -y -q \
     git && \
