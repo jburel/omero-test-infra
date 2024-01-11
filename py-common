@@ -11,5 +11,5 @@ cd $TARGET
 
 pip install --upgrade setuptools wheel
 pip install --upgrade -r $dir/requirements.txt
-pip uninstall omero-py
+pip uninstall -y omero-py
 pip install --upgrade git+https://github.com/jburel/omero-py.git@update
