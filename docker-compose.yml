@@ -20,9 +20,6 @@ services:
     ports:
       - "${OMERO_SERVER_TCP}4063"
       - "${OMERO_SERVER_SSL}4064"
-    env_file:
-      - path: .omeroci/.env
-        required: false
   web:
     build:
       context: ./omeroweb

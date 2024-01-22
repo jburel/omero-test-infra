@@ -10,4 +10,8 @@ PROJECT=${PROJECT:-$(get_project_name)}
 
 cd $dir
 
-exec docker compose -p ${PROJECT} "$@"
+if [ -f .omeroci/.env ]; then
+  exec docker compose --env-file .omeroci/.env -p ${PROJECT} "$@"
+else
+  exec docker compose -p ${PROJECT} "$@"
+fi
