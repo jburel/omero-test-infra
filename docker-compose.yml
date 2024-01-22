@@ -10,6 +10,7 @@ services:
       context: ./omeroserver
       args:
         - OMEROSERVER_BASE_IMAGE=${OMERO_SERVER_IMAGE}:${OMERO_SERVER_VERSION}
+    env_file: .env
     environment:
       - ROOTPASS=${ROOTPASS}
       - CONFIG_omero_db_user=postgres
@@ -21,8 +22,6 @@ services:
     ports:
       - "${OMERO_SERVER_TCP}4063"
       - "${OMERO_SERVER_SSL}4064"
-    env_file:
-      - .env
     build:
       context: ./omeroweb
       args:
