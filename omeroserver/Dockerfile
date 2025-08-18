@@ -1,4 +1,4 @@
-ARG OMEROSERVER_BASE_IMAGE=openmicroscopy/omero-server:latest
+ARG OMEROSERVER_BASE_IMAGE=jburel/omero-server:latest
 FROM $OMEROSERVER_BASE_IMAGE
 
 USER root
